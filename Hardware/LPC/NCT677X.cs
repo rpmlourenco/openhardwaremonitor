@@ -272,14 +272,17 @@ namespace OpenHardwareMonitor.Hardware.LPC {
 
         case Chip.NCT6779D:
         case Chip.NCT6791D:
-          if (chip == Chip.NCT6779D) {
-            fans = new float?[5];
-            controls = new float?[5];
-          } else {
-            fans = new float?[6];
-            controls = new float?[6];
-          }
-
+        case Chip.NCT6796D:
+            if (chip == Chip.NCT6779D) {
+                fans = new float?[5];
+                controls = new float?[5];
+            } else if (chip == Chip.NCT6796D) {
+                fans = new float?[6];
+                controls = new float?[6];
+            } else {                     
+                fans = new float?[6];
+                controls = new float?[6];
+            }
           fanRpmBaseRegister = 0x4C0;
 
           // min value RPM value with 13-bit fan counter
@@ -414,7 +417,7 @@ namespace OpenHardwareMonitor.Hardware.LPC {
     public float?[] Controls { get { return controls; } }
 
     private void DisableIOSpaceLock() {
-      if (chip != Chip.NCT6791D)
+      if ((chip != Chip.NCT6791D) || (chip != Chip.NCT6796D))
         return;
 
       // the lock is disabled already if the vendor ID can be read

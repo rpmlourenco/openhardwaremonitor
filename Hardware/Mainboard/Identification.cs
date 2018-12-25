@@ -190,6 +190,8 @@ namespace OpenHardwareMonitor.Hardware.Mainboard {
           return Model.Z68X_UD7_B3;
         case "FH67":
           return Model.FH67;
+        case "ROG MAXIMUS XI HERO (WI-FI)":
+          return Model.ROG_MAXIMUS_XI_HERO_WIFI;
         case "Base Board Product Name":
         case "To be filled by O.E.M.":
           return Model.Unknown;
