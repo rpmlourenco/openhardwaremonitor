@@ -1138,7 +1138,7 @@ namespace OpenHardwareMonitor.Hardware.Mainboard {
                 v.Add(new Voltage("Voltage #15", 14, true));
                 t.Add(new Temperature("CPU Core", 0));
                 t.Add(new Temperature("Temperature #1", 1));
-                t.Add(new Temperature("Temperature #2", 2));
+                t.Add(new Temperature("Motherboard Temp", 2));
                 t.Add(new Temperature("Temperature #3", 3));
                 t.Add(new Temperature("Temperature #4", 4));
                 t.Add(new Temperature("Temperature #5", 5));
