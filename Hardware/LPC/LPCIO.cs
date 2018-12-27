@@ -236,7 +236,7 @@ namespace OpenHardwareMonitor.Hardware.LPC {
         ushort vendorID = port.ReadWord(FINTEK_VENDOR_ID_REGISTER);
 
         // disable the hardware monitor i/o space lock on NCT6791D chips
-        if (address == verify && (chip == Chip.NCT6791D || chip == Chip.NCT6796D)) {
+        if (address == verify && (chip == Chip.NCT6791D && chip == Chip.NCT6796D)) {
           port.NuvotonDisableIOSpaceLock();
         }
 
